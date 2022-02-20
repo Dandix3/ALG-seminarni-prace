@@ -56,8 +56,24 @@ namespace Seminárka_ALG
             lifo.Push(1);
             lifo.Push(2);
             lifo.Push(3);
-
+            
             Console.WriteLine(lifo.Pop());
+            
+            Console.WriteLine("-------------------Spojový seznam-----------------");
+            LinkedList<int> seznam = new LinkedList<int>();
+            seznam.AddFirst(1);
+            seznam.AddLast(2);
+            LinkedListNode<int> prostredni = seznam.AddLast(3);
+            seznam.AddLast(4);
+            seznam.AddLast(5);
+            seznam.AddAfter(prostredni, 32);
+            seznam.AddAfter(prostredni, 31);
+            seznam.Remove(prostredni);
+            
+            foreach (int i in seznam)
+            {
+                Console.Write($"{i}, ");
+            }
 
             Console.ReadKey();
         }
